@@ -1,5 +1,4 @@
 #include "MarqFitAlg.h"
-//#include "messagefacility/MessageLogger/MessageLogger.h"
 #include <limits>
 
 namespace gshf{
@@ -21,8 +20,10 @@ namespace gshf{
   /* analytic derivatives for multi-Gaussian function in fgauss */
   void MarqFitAlg::dgauss(const float p[], const int npar, const int ndat, std::vector<float> &dydp){
     #if defined WITH_OPENMP
-    //#pragma GCC ivdep
-     #pragma omp simd 
+    #pragma omp simd
+    #ifdef __INTEL_COMPILER
+    #pragma ivdep
+    #endif
     #endif
     for(int i=0;i<ndat;i++){
       for(int j=0;j<npar;j+=3){
@@ -54,8 +55,10 @@ namespace gshf{
   
     /* ... Calculate beta */
     #if defined WITH_OPENMP
-     #pragma omp simd
-    //#pragma GCC ivdep
+    #pragma omp simd
+    #ifdef __INTEL_COMPILER
+    #pragma ivdep
+    #endif
     #endif
     for(j=0;j<npar;j++){
       beta[j]=0.0;
@@ -67,7 +70,9 @@ namespace gshf{
     /* ... Calculate alpha */
     #if defined WITH_OPENMP
     #pragma omp simd
-    //#pragma GCC ivdep
+    #ifdef __INTEL_COMPILER
+    #pragma ivdep
+    #endif
     #endif
     for (j = 0; j < npar; j++){
       for (k = j; k < npar; k++){
@@ -194,7 +199,9 @@ namespace gshf{
       }
       #if defined WITH_OPENMP
       #pragma omp simd
-	//#pragma GCC ivdep
+      #ifdef __INTEL_COMPILER
+      #pragma ivdep
+      #endif
       #endif
       for (i = 0; i < npar; i++){
 	for (j = 0; j < npar;j++){
