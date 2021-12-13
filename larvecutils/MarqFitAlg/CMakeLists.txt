@@ -12,7 +12,7 @@ if(OPENMP_FOUND)
   endif()
 endif(OPENMP_FOUND)
 
-art_make()
+cet_make_library( SOURCE MarqFitAlg.cxx )
 
 install_headers()
 install_fhicl()
