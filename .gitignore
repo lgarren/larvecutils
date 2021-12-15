@@ -33,5 +33,11 @@
 
 # Other
 *~
+.depend
+*Dict.cxx
+*Dict.o
+*.bak
+*.backup
+*.log
 *.root
 
