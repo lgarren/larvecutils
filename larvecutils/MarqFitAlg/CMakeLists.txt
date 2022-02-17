@@ -5,7 +5,7 @@ if(OPENMP_FOUND)
   if( ${CMAKE_HOST_SYSTEM_VERSION} MATCHES "^2.6.32.*" )
     message(STATUS "OpenMP is not supported on SLF6")
   else()
-    add_definitions(-DWITH_OPENMP)
+    add_definitions(-DWITH_OPENMP) ### MIGRATE-ACTION-RECOMMENDED (migrate-3.05.03) - avoid directory-scope functions: use target_compile_definitions() or target_compile_features() whenever possible
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
