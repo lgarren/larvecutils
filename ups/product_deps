@@ -250,7 +250,7 @@ libdir	fq_dir		lib
 product		version		qual	flags		<table_format=2>
 clang		v7_0_0		-
 gcc		v9_3_0		-
-cetmodules	v3_05_03	-	only_for_build
+cetmodules	v3_05_04	-	only_for_build
 end_product_list
 ####################################
 
