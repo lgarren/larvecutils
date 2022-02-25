@@ -5,7 +5,7 @@ if( ${CMAKE_HOST_SYSTEM_VERSION} MATCHES "^2.6.32.*" )
   # see the discussion in https://cdcvs.fnal.gov/redmine/issues/23001
   message(STATUS "OpenMP is not supported on SLF6")
 else()
-  find_package(OpenMP)
+  find_package(OpenMP EXPORT)
   if(OPENMP_FOUND)
     target_link_libraries(${libtarget} PUBLIC OpenMP::OpenMP_CXX)
   endif(OPENMP_FOUND)
