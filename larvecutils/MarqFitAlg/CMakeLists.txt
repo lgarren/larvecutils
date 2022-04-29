@@ -1,4 +1,6 @@
-cet_make_library(LIBRARY_NAME_VAR libtarget  SOURCE MarqFitAlg.cxx )
+cet_make_library(LIBRARY_NAME_VAR libtarget
+  SOURCE MarqFitAlg.cxx
+)
 
 if( ${CMAKE_HOST_SYSTEM_VERSION} MATCHES "^2.6.32.*" )
   # even if OpenMP is found on a SLF6 machine, it cannot be used.
