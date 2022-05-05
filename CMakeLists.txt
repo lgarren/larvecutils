@@ -9,7 +9,7 @@
 cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
 
 find_package(cetmodules REQUIRED)
-project(larvecutils VERSION 09.01.00 LANGUAGES CXX)
+project(larvecutils VERSION 09.01.01 LANGUAGES CXX)
 
 include(CetCMakeEnv)
 cet_cmake_env()
