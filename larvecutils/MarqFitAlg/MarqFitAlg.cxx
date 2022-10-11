@@ -149,7 +149,7 @@ namespace gshf {
   float MarqFitAlg::invrt_matrix(std::vector<float>& alphaf, const int npar)
   {
     /*
-     Inverts the curvature matrix alpha using Gauss-Jordan elimination and 
+     Inverts the curvature matrix alpha using Gauss-Jordan elimination and
      returns the determinant.  This is based on the implementation in "Data
      Reduction and Error Analysis for the Physical Sciences" by P. R. Bevington.
      That implementation, in turn, uses the algorithm of the subroutine MINV,
